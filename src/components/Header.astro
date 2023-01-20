@@ -14,9 +14,12 @@ import HeaderLink from "./HeaderLink.astro";
 <header class="fixed w-full p-2 z-20 backdrop-blur-sm">
   <div class="mx-auto max-w-3xl">
     <nav class="flex items-center gap-3 text-base">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-      <HeaderLink href="/contact">Contact</HeaderLink>
+      <HeaderLink href="/" class="lowercase">
+        <span class="text-yellow-600 dark:text-yellow-300">root</span>
+        <span class="text-green-600 dark:text-green-300">@matdexir</span>
+      </HeaderLink>
+      <HeaderLink href="/about">$whoami</HeaderLink>
+      <HeaderLink href="/contact">$write(fd)</HeaderLink>
       <div class="flex-1"></div>
       <ThemeToggle client:visible />
     </nav>
