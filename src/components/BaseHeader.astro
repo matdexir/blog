@@ -1,4 +1,6 @@
 ---
+import "../styles/globals.css";
+
 export interface Props {
   title: string;
   description: string;
@@ -12,7 +14,7 @@ const { title, description, image = "./cover.jpg" } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
@@ -44,6 +46,7 @@ const { title, description, image = "./cover.jpg" } = Astro.props;
     }
     return "light";
   })();
+
   if (theme === "light") {
     document.documentElement.classList.remove("dark");
   } else {
