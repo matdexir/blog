@@ -1,4 +1,8 @@
-@import url();
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
 body {
+  font-family: "Fira Code", monospace;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
 }

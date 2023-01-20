@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { RxSun, RxMoon } from "react-icons/rx";
 
 const themes = ["light", "dark"];
 
@@ -11,16 +12,14 @@ export default function ThemeToggle() {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)")) {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark";
     }
     return "light";
   });
-
   const toggleTheme = () => {
     const t = theme === "light" ? "dark" : "light";
     localStorage.setItem("theme", t);
-    console.log(theme);
     setTheme(t);
   };
 
@@ -38,7 +37,7 @@ export default function ThemeToggle() {
   }, []);
 
   return isMounted ? (
-    <div>
+    <div className="inline-flex items-center p-[1px] rounded-3xl bg-green-400 dark:bg-zinc-600">
       {themes.map((t) => {
         const checked = t === theme;
         return (
@@ -50,7 +49,7 @@ export default function ThemeToggle() {
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
-            {t === "light" ? <p>L</p> : <p>D</p>}
+            {t === "light" ? <RxSun /> : <RxMoon />}
           </button>
         );
       })}
