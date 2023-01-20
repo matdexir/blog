@@ -18,8 +18,9 @@ export default function ThemeToggle() {
   });
 
   const toggleTheme = () => {
-    const t = theme === "light" ? "light" : "dark";
+    const t = theme === "light" ? "dark" : "light";
     localStorage.setItem("theme", t);
+    console.log(theme);
     setTheme(t);
   };
 
@@ -38,7 +39,6 @@ export default function ThemeToggle() {
 
   return isMounted ? (
     <div>
-      {" "}
       {themes.map((t) => {
         const checked = t === theme;
         return (
@@ -50,7 +50,7 @@ export default function ThemeToggle() {
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
-            {t === "light" ? <p>light</p> : <p>dark</p>}
+            {t === "light" ? <p>L</p> : <p>D</p>}
           </button>
         );
       })}
