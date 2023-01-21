@@ -1,0 +1,18 @@
+---
+import Layout from "./Layout.astro";
+import Content from "../components/Content.astro";
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "" } = Astro.props;
+---
+
+<Layout title={title}>
+  <Content
+    classname="mt-10 prose dark:prose-invert prose-headings:text-green-600 prose-pre:w-11/12 prose-pre:mx-auto prose-pre:ring-1 prose-pre:ring-green-700"
+  >
+    <slot />
+  </Content>
+</Layout>
