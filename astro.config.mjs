@@ -13,5 +13,5 @@ import image from "@astrojs/image";
 export default defineConfig({
   integrations: [tailwind(), react(), image()],
   site: "https://matdexir.github.io",
-  base: "/blog",
+  base: "/",
 });
