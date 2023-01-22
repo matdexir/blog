@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { RxSun, RxMoon } from "react-icons/rx";
+import { RxSun, RxMoon } from "react-icons/rx/index";
 
 const themes = ["light", "dark"];
 
